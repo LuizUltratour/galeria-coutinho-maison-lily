@@ -92,21 +92,21 @@
 
     .f-btn {
       padding: 7px 20px;
-      border: 1px solid transparent;
-      background: #F9D59D;
+      border: 1px solid #FFFFFF;
+      background: rgba(100,100,97,0.5);
       cursor: pointer;
       font-family: var(--font-sans);
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: var(--dark);
+      color: #000000;
       white-space: nowrap;
       border-radius: 20px;
       transition: background 0.22s var(--ease), color 0.22s var(--ease), border-color 0.22s var(--ease), transform 0.15s var(--ease);
     }
-    .f-btn:hover { background: #F3C67E; }
-    .f-btn.active { background: var(--accent); color: #FFFFFF; border: 2px solid #F9D59D; box-shadow: 0 4px 14px rgba(0,0,0,0.35); }
+    .f-btn:hover { background: rgba(100,100,97,0.7); }
+    .f-btn.active { background: #646461; color: #000000; border: 1px solid transparent; box-shadow: 0 4px 14px rgba(0,0,0,0.35); }
     .f-btn:active { transform: scale(0.97); }
 
     /* Sub-filter */
@@ -130,21 +130,20 @@
 
     .sf-btn {
       padding: 5px 16px;
-      border: 1px solid transparent;
-      background: #F9D59D;
+      border: 1px solid #FFFFFF;
+      background: rgba(100,100,97,0.5);
       cursor: pointer;
       font-family: var(--font-sans);
       font-size: 10.5px;
       font-weight: 400;
       letter-spacing: 0.05em;
-      color: var(--dark);
-      opacity: 0.55;
+      color: #000000;
       white-space: nowrap;
       border-radius: 20px;
-      transition: opacity 0.2s, border-color 0.2s, background 0.2s, color 0.2s;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
     }
-    .sf-btn:hover { opacity: 1; background: #F3C67E; }
-    .sf-btn.active { background: var(--accent); color: var(--white); border: 2px solid #F9D59D; opacity: 1; }
+    .sf-btn:hover { background: rgba(100,100,97,0.7); }
+    .sf-btn.active { background: #646461; color: #000000; border: 1px solid transparent; }
 
     /* ── GALLERY SCROLL ── */
     #g-scroll {
@@ -898,24 +897,7 @@ const GALLERY_CONFIG = {
         { id: 'ap-250', label: 'AP 250m² — Terraços 1 e 2' },
       ]
     },
-    {
-      id: 'areas-comuns', label: 'Áreas Comuns',
-      subs: [
-        { id: 'ac-academia',   label: 'Academia' },
-        { id: 'ac-barbearia',  label: 'Barbearia' },
-        { id: 'ac-brinquedo',  label: 'Brinquedoteca' },
-        { id: 'ac-pet',        label: 'Espaço Pet' },
-        { id: 'ac-gourmet',    label: 'Gourmet' },
-        { id: 'ac-hall',       label: 'Hall Social' },
-        { id: 'ac-office',     label: 'Home Office' },
-        { id: 'ac-quadra',     label: 'Mini Quadra' },
-        { id: 'ac-piscina',    label: 'Piscina' },
-        { id: 'ac-playground', label: 'Playground' },
-        { id: 'ac-reuniao',    label: 'Sala de Reunião' },
-        { id: 'ac-beleza',     label: 'Salão de Beleza' },
-        { id: 'ac-festa',      label: 'Salão de Festa' },
-      ]
-    },
+    { id: 'areas-comuns', label: 'Áreas Comuns' },
     { id: 'detalhes', label: 'Detalhes' },
     { id: 'plantas', label: 'Plantas' },
   ],
@@ -947,47 +929,47 @@ const GALLERY_CONFIG = {
     { id:29, type:'image', category:'apartamentos', subCategory:'ap-250', title:'Varanda',         src:'assets/imagens/AP 250M - TERM 1 E 2/250M TERM 1-2 - VARANDA.png',       thumb:'assets/thumbs/imagens/ap 250m - term 1 e 2/250m term 1-2 - varanda.jpg' },
 
     // ═══ ÁREAS COMUNS › ACADEMIA ═══════════════════════════════════
-    { id:40, type:'image', category:'areas-comuns', subCategory:'ac-academia', title:'Academia',                    src:'assets/imagens/AREA COMUM/ACADEMIA.png',           thumb:'assets/thumbs/imagens/area comum/academia.jpg' },
-    { id:41, type:'image', category:'areas-comuns', subCategory:'ac-academia', title:'Academia — Espaço Multiuso',  src:'assets/imagens/AREA COMUM/ACADEMIA - MULTIUSO.png', thumb:'assets/thumbs/imagens/area comum/academia - multiuso.jpg' },
+    { id:40, type:'image', category:'areas-comuns', title:'Academia',                    src:'assets/imagens/AREA COMUM/ACADEMIA.png',           thumb:'assets/thumbs/imagens/area comum/academia.jpg' },
+    { id:41, type:'image', category:'areas-comuns', title:'Academia — Espaço Multiuso',  src:'assets/imagens/AREA COMUM/ACADEMIA - MULTIUSO.png', thumb:'assets/thumbs/imagens/area comum/academia - multiuso.jpg' },
 
     // ═══ ÁREAS COMUNS › BARBEARIA ═══════════════════════════════════
-    { id:42, type:'image', category:'areas-comuns', subCategory:'ac-barbearia', title:'Barbearia', src:'assets/imagens/AREA COMUM/BARBEARIA.png', thumb:'assets/thumbs/imagens/area comum/barbearia.jpg' },
+    { id:42, type:'image', category:'areas-comuns', title:'Barbearia', src:'assets/imagens/AREA COMUM/BARBEARIA.png', thumb:'assets/thumbs/imagens/area comum/barbearia.jpg' },
 
     // ═══ ÁREAS COMUNS › BRINQUEDOTECA ═══════════════════════════════
-    { id:43, type:'image', category:'areas-comuns', subCategory:'ac-brinquedo', title:'Brinquedoteca', src:'assets/imagens/AREA COMUM/BRINQUEDOTECA.png', thumb:'assets/thumbs/imagens/area comum/brinquedoteca.jpg' },
+    { id:43, type:'image', category:'areas-comuns', title:'Brinquedoteca', src:'assets/imagens/AREA COMUM/BRINQUEDOTECA.png', thumb:'assets/thumbs/imagens/area comum/brinquedoteca.jpg' },
 
     // ═══ ÁREAS COMUNS › ESPAÇO PET ═══════════════════════════════════
-    { id:44, type:'image', category:'areas-comuns', subCategory:'ac-pet', title:'Espaço Pet', src:'assets/imagens/AREA COMUM/ESPAÇO PET.png', thumb:'assets/thumbs/imagens/area comum/espaço pet.jpg' },
+    { id:44, type:'image', category:'areas-comuns', title:'Espaço Pet', src:'assets/imagens/AREA COMUM/ESPAÇO PET.png', thumb:'assets/thumbs/imagens/area comum/espaço pet.jpg' },
 
     // ═══ ÁREAS COMUNS › GOURMET ═══════════════════════════════════
-    { id:45, type:'image', category:'areas-comuns', subCategory:'ac-gourmet', title:'Espaço Gourmet',       src:'assets/imagens/AREA COMUM/GOURMET.png',          thumb:'assets/thumbs/imagens/area comum/gourmet.jpg' },
-    { id:46, type:'image', category:'areas-comuns', subCategory:'ac-gourmet', title:'Gourmet — Área Externa', src:'assets/imagens/AREA COMUM/GOURMET EXTERNA.png', thumb:'assets/thumbs/imagens/area comum/gourmet externa.jpg' },
+    { id:45, type:'image', category:'areas-comuns', title:'Espaço Gourmet',       src:'assets/imagens/AREA COMUM/GOURMET.png',          thumb:'assets/thumbs/imagens/area comum/gourmet.jpg' },
+    { id:46, type:'image', category:'areas-comuns', title:'Gourmet — Área Externa', src:'assets/imagens/AREA COMUM/GOURMET EXTERNA.png', thumb:'assets/thumbs/imagens/area comum/gourmet externa.jpg' },
 
     // ═══ ÁREAS COMUNS › HALL SOCIAL ═══════════════════════════════
-    { id:47, type:'image', category:'areas-comuns', subCategory:'ac-hall', title:'Hall Social',            src:'assets/imagens/AREA COMUM/HALL SOCIAL.png',   thumb:'assets/thumbs/imagens/area comum/hall social.jpg' },
-    { id:48, type:'image', category:'areas-comuns', subCategory:'ac-hall', title:'Hall Social — Vista 2',  src:'assets/imagens/AREA COMUM/HALL SOCIAL 2.png', thumb:'assets/thumbs/imagens/area comum/hall social 2.jpg' },
+    { id:47, type:'image', category:'areas-comuns', title:'Hall Social',            src:'assets/imagens/AREA COMUM/HALL SOCIAL.png',   thumb:'assets/thumbs/imagens/area comum/hall social.jpg' },
+    { id:48, type:'image', category:'areas-comuns', title:'Hall Social — Vista 2',  src:'assets/imagens/AREA COMUM/HALL SOCIAL 2.png', thumb:'assets/thumbs/imagens/area comum/hall social 2.jpg' },
 
     // ═══ ÁREAS COMUNS › HOME OFFICE ═══════════════════════════════
-    { id:49, type:'image', category:'areas-comuns', subCategory:'ac-office', title:'Home Office', src:'assets/imagens/AREA COMUM/HOME OFFICE.png', thumb:'assets/thumbs/imagens/area comum/home office.jpg' },
+    { id:49, type:'image', category:'areas-comuns', title:'Home Office', src:'assets/imagens/AREA COMUM/HOME OFFICE.png', thumb:'assets/thumbs/imagens/area comum/home office.jpg' },
 
     // ═══ ÁREAS COMUNS › MINI QUADRA ═══════════════════════════════
-    { id:50, type:'image', category:'areas-comuns', subCategory:'ac-quadra', title:'Mini Quadra', src:'assets/imagens/AREA COMUM/MINI QUADRA.png', thumb:'assets/thumbs/imagens/area comum/mini quadra.jpg' },
+    { id:50, type:'image', category:'areas-comuns', title:'Mini Quadra', src:'assets/imagens/AREA COMUM/MINI QUADRA.png', thumb:'assets/thumbs/imagens/area comum/mini quadra.jpg' },
 
     // ═══ ÁREAS COMUNS › PISCINA ═══════════════════════════════════
-    { id:51, type:'image', category:'areas-comuns', subCategory:'ac-piscina', title:'Piscina',           src:'assets/imagens/AREA COMUM/PISCINA.png',   thumb:'assets/thumbs/imagens/area comum/piscina.jpg' },
-    { id:52, type:'image', category:'areas-comuns', subCategory:'ac-piscina', title:'Piscina — Vista 2', src:'assets/imagens/AREA COMUM/PISCINA 2.png', thumb:'assets/thumbs/imagens/area comum/piscina 2.jpg' },
+    { id:51, type:'image', category:'areas-comuns', title:'Piscina',           src:'assets/imagens/AREA COMUM/PISCINA.png',   thumb:'assets/thumbs/imagens/area comum/piscina.jpg' },
+    { id:52, type:'image', category:'areas-comuns', title:'Piscina — Vista 2', src:'assets/imagens/AREA COMUM/PISCINA 2.png', thumb:'assets/thumbs/imagens/area comum/piscina 2.jpg' },
 
     // ═══ ÁREAS COMUNS › PLAYGROUND ═══════════════════════════════════
-    { id:53, type:'image', category:'areas-comuns', subCategory:'ac-playground', title:'Playground', src:'assets/imagens/AREA COMUM/PLAYGROUND.png', thumb:'assets/thumbs/imagens/area comum/playground.jpg' },
+    { id:53, type:'image', category:'areas-comuns', title:'Playground', src:'assets/imagens/AREA COMUM/PLAYGROUND.png', thumb:'assets/thumbs/imagens/area comum/playground.jpg' },
 
     // ═══ ÁREAS COMUNS › SALA DE REUNIÃO ═══════════════════════════════
-    { id:54, type:'image', category:'areas-comuns', subCategory:'ac-reuniao', title:'Sala de Reunião', src:'assets/imagens/AREA COMUM/REUNIAO.png', thumb:'assets/thumbs/imagens/area comum/reuniao.jpg' },
+    { id:54, type:'image', category:'areas-comuns', title:'Sala de Reunião', src:'assets/imagens/AREA COMUM/REUNIAO.png', thumb:'assets/thumbs/imagens/area comum/reuniao.jpg' },
 
     // ═══ ÁREAS COMUNS › SALÃO DE BELEZA ═══════════════════════════════
-    { id:55, type:'image', category:'areas-comuns', subCategory:'ac-beleza', title:'Salão de Beleza', src:'assets/imagens/AREA COMUM/SALAO DE BELEZA.png', thumb:'assets/thumbs/imagens/area comum/salao de beleza.jpg' },
+    { id:55, type:'image', category:'areas-comuns', title:'Salão de Beleza', src:'assets/imagens/AREA COMUM/SALAO DE BELEZA.png', thumb:'assets/thumbs/imagens/area comum/salao de beleza.jpg' },
 
     // ═══ ÁREAS COMUNS › SALÃO DE FESTA ═══════════════════════════════
-    { id:56, type:'image', category:'areas-comuns', subCategory:'ac-festa', title:'Salão de Festa', src:'assets/imagens/AREA COMUM/SALAO DE FESTA.png', thumb:'assets/thumbs/imagens/area comum/salao de festa.jpg' },
+    { id:56, type:'image', category:'areas-comuns', title:'Salão de Festa', src:'assets/imagens/AREA COMUM/SALAO DE FESTA.png', thumb:'assets/thumbs/imagens/area comum/salao de festa.jpg' },
 
     // ═══ DETALHES (recortes decorativos) ═══════════════════════════
     { id:70, type:'image', category:'detalhes', title:'Detalhe — Entrada',              src:'assets/imagens/RECORTES/close-entrada.png',        thumb:'assets/thumbs/imagens/recortes/close-entrada.jpg' },
@@ -1010,7 +992,6 @@ const GALLERY_CONFIG = {
     { id:93,  type:'image', category:'plantas', isPlant:true, title:'Pilotis',                         src:'assets/plantas/PBH - PAV PILOTIS - 20FEV26.png',                thumb:'assets/thumbs/plantas/pbh - pav pilotis - 20fev26.jpg' },
     { id:94,  type:'image', category:'plantas', isPlant:true, title:'Mezanino 01',                     src:'assets/plantas/PBH - PAV MEZANINO 01 - 29JAN26.png',            thumb:'assets/thumbs/plantas/pbh - pav mezanino 01 - 29jan26.jpg' },
     { id:95,  type:'image', category:'plantas', isPlant:true, title:'Mezanino 02',                     src:'assets/plantas/PBH - PAV MEZANINO 2 - 20FEV26.png',             thumb:'assets/thumbs/plantas/pbh - pav mezanino 2 - 20fev26.jpg' },
-    { id:96,  type:'image', category:'plantas', isPlant:true, title:'Pavimento Tipo 1', subtitle:'Fev/26', src:'assets/plantas/PBH - PAV TIPO 1 - 20FEV26.png',            thumb:'assets/thumbs/plantas/pbh - pav tipo 1 - 20fev26.jpg' },
     { id:97,  type:'image', category:'plantas', isPlant:true, title:'Pavimento Tipo 1', subtitle:'Mar/26', src:'assets/plantas/PBH - PAV TIPO 1 - 26MAR26.png',            thumb:'assets/thumbs/plantas/pbh - pav tipo 1 - 26mar26.jpg' },
     { id:98,  type:'image', category:'plantas', isPlant:true, title:'Pavimento Tipo 1 — 3 Quartos', subtitle:'Mar/26', src:'assets/plantas/PBH - PAV TIPO 1 - 26MAR26(3 QUARTOS).png', thumb:'assets/thumbs/plantas/pbh - pav tipo 1 - 26mar26(3 quartos).jpg' },
     { id:99,  type:'image', category:'plantas', isPlant:true, title:'Pavimento de Lazer',              src:'assets/plantas/PBH - PAV LAZER - 04SET25.png',                  thumb:'assets/thumbs/plantas/pbh - pav lazer - 04set25.jpg' },
