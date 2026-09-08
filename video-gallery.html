@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vídeo — Coutinho Maison Lily</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Coutinho Maison Lily — tema cinza-chumbo/dourado */
+      --bg:            #646461;   /* cinza-chumbo */
+      --dark:          #F5F1EA;   /* quase-branco */
+      --border:        rgba(255,255,255,0.14);
+      --border-strong: rgba(255,255,255,0.30);
+      --accent:        #2B2A27;
+      --video-bg:      #1c1c1a;   /* quase preto — palco do vídeo */
+      --font-serif:    'Cormorant Garamond', Georgia, serif;
+      --font-sans:     'Inter', system-ui, sans-serif;
+      --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html, body {
+      height: 100%;
+      overflow: hidden;
+      background: var(--bg);
+      color: var(--dark);
+      font-family: var(--font-sans);
+    }
+
+    #vg-root {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      background: var(--bg);
+    }
+
+    /* ── HEADER ── */
+    #vg-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 24px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+      gap: 12px;
+    }
+    #vg-brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    #vg-brand .b-name {
+      font-family: var(--font-serif);
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    #vg-brand .b-sub {
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-top: 3px;
+    }
+
+    #btn-close {
+      width: 46px; height: 46px;
+      border: none;
+      background: url('assets/close-normal-dia.png') center/contain no-repeat;
+      background-color: transparent;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+      flex-shrink: 0;
+      padding: 0;
+    }
+    #btn-close:hover { background-image: url('assets/close-hover-dia.png'); }
+
+    /* ── STAGE ── */
+    #vg-stage {
+      flex: 1;
+      min-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--video-bg);
+      padding: 20px;
+    }
+    #vg-player {
+      width: 100%;
+      height: 100%;
+      max-width: 1600px;
+      object-fit: contain;
+      display: block;
+      outline: none;
+      border-radius: 4px;
+    }
+
+    /* Controles nativos: remove o degradê/scrim escuro que surgia atrás da barra
+       ao passar o mouse (dava sensação de moldura/corte ao redor do vídeo).
+       Mantém apenas os botões/scrubber, sem a sombra em gradiente. */
+    #vg-player::-webkit-media-controls-enclosure { background: transparent; }
+    #vg-player::-webkit-media-controls-panel {
+      background: transparent;
+      background-image: none;
+      box-shadow: none;
+    }
+
+    #vg-foot {
+      flex-shrink: 0;
+      text-align: center;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      color: #F9D59D;
+      padding: 8px 16px 12px;
+    }
+
+    @media (max-width: 600px) {
+      #vg-header { padding: 10px 14px; }
+      #vg-brand .b-name { font-size: 17px; }
+      #vg-stage { padding: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div id="vg-root">
+  <header id="vg-header">
+    <div id="vg-brand">
+      <span class="b-name">Coutinho Maison Lily</span>
+      <span class="b-sub">Teaser de Lançamento</span>
+    </div>
+    <button id="btn-close" title="Fechar" aria-label="Fechar"></button>
+  </header>
+
+  <div id="vg-stage">
+    <video id="vg-player"
+           src="assets/video/apresentacao.mp4"
+           autoplay playsinline controls
+           preload="auto">
+    </video>
+  </div>
+
+  <p id="vg-foot">Imagens meramente ilustrativas.</p>
+</div>
+
+<script>
+  var player = document.getElementById('vg-player');
+
+  // tenta autoplay com som; se o browser bloquear, cai para mudo
+  player.play().catch(function () {
+    player.muted = true;
+    player.play().catch(function () {});
+  });
+
+  document.getElementById('btn-close').addEventListener('click', closeGallery);
+
+  function closeGallery() {
+    try { player.pause(); } catch (e) {}
+    if (window.parent !== window) {
+      window.parent.postMessage({ action: 'closeGallery' }, '*');
+    } else if (window.history.length > 1) {
+      history.back();
+    } else {
+      window.close();
+    }
+  }
+</script>
+</body>
+</html>
